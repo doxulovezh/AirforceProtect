@@ -1,0 +1,17 @@
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\MainW.g.cs
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\MainWindow.g.cs
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\App.g.cs
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\MainW.baml
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\MainWindow.baml
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\AirforceProtect.csproj.GenerateResource.Cache
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\Waring.g.cs
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\Waring.baml
+H:\AirforceProtect\AirforceProtect\AirforceProtect.exe.config
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\AirforceProtect_MarkupCompile.cache
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\AirforceProtect_MarkupCompile.lref
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\AirforceProtect.g.resources
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\AirforceProtect.Properties.Resources.resources
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\AirforceProtect.exe
+H:\AirforceProtect\AirforceProtect\obj\x64\Debug\AirforceProtect.pdb
+H:\AirforceProtect\AirforceProtect\AirforceProtect.exe
+H:\AirforceProtect\AirforceProtect\AirforceProtect.pdb

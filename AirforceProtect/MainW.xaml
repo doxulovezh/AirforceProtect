@@ -1,0 +1,177 @@
+﻿<Window x:Class="AirforceProtect.MainW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AirforceProtect"
+        mc:Ignorable="d"
+        Title="MainW" Height="610" Width="1080" Icon="IMG/bb.png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Background="#FF005C99">
+        <Rectangle HorizontalAlignment="Left" Height="330" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3" Margin="116,63,0,0"/>
+
+        <Canvas HorizontalAlignment="Left" Height="610" VerticalAlignment="Top" Width="111" Background="#FF1068A2">
+            <Label x:Name="label" Content="文件扫描" Canvas.Left="17" Canvas.Top="72" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="label_Copy" Content="网络进程" Canvas.Left="17" Canvas.Top="174" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="label_Copy1" Content="策略设置" Canvas.Left="15" Canvas.Top="402" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="label_Copy2" Content="备份恢复" Canvas.Left="17" Canvas.Top="521" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold"/>
+            <Label x:Name="label_Copy3" Content="高级工具" Canvas.Left="17" Canvas.Top="291" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold"/>
+        </Canvas>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="48" Margin="36,127,0,0" VerticalAlignment="Top" Width="42" Source="IMG/111.png"  MouseEnter="image_Copy_MouseEnter" MouseLeave="image_Copy_MouseLeave" MouseLeftButtonDown="image_MouseLeftButtonDown"  />
+        <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="48" Margin="36,23,0,0" VerticalAlignment="Top" Width="42" Source="IMG/222.png" MouseEnter="image_Copy_MouseEnter" MouseLeave="image_Copy_MouseLeave" MouseLeftButtonDown="image_Copy_MouseLeftButtonDown"/>
+        <Image x:Name="image_Copy1" HorizontalAlignment="Left" Height="50" Margin="40,467,0,0" VerticalAlignment="Top" Width="42" Source="IMG/333.png"  MouseEnter="image_Copy_MouseEnter" MouseLeave="image_Copy_MouseLeave" MouseLeftButtonDown="image_Copy1_MouseLeftButtonDown"/>
+        <Image x:Name="image_Copy2" HorizontalAlignment="Left" Height="48" Margin="36,355,0,0" VerticalAlignment="Top" Width="42" Source="IMG/444.png"  MouseEnter="image_Copy_MouseEnter" MouseLeave="image_Copy_MouseLeave" MouseLeftButtonDown="image_Copy2_MouseLeftButtonDown" />
+        <Image x:Name="image_Copy3" HorizontalAlignment="Left" Height="215" Margin="116,216,0,0" VerticalAlignment="Top" Width="954" Source="IMG/bc2_副本.png" Opacity="0.2"/>
+        <Image x:Name="image_Copy4" HorizontalAlignment="Left" Height="48" Margin="36,238,0,0" VerticalAlignment="Top" Width="42" Source="IMG/666.png"  MouseEnter="image_Copy_MouseEnter" MouseLeave="image_Copy_MouseLeave" MouseLeftButtonDown="image_Copy4_MouseLeftButtonDown"/>
+        <Button x:Name="button" Content="X" HorizontalAlignment="Left" Margin="1019,1,0,0" VerticalAlignment="Top" Width="60" Height="26" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="V" HorizontalAlignment="Left" Margin="954,0,0,583" VerticalAlignment="Bottom" Width="60" Height="26" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="button_Copy_Click"/>
+        <ProgressBar Name="probar" HorizontalAlignment="Left" Height="8" Margin="116,11,0,0" VerticalAlignment="Top" Width="833" BorderBrush="#FF005C99" Background="#FF005289" Foreground="#FE9DF533"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="587" Margin="116,23,0,0" VerticalAlignment="Top" Width="964" BorderBrush="#FF1068A2" Background="#FF1D6899" Foreground="White">
+            <TabItem x:Name="pad文件扫描"  Header="文件扫描" BorderBrush="#FF1068A2" Foreground="Black" Background="#FF005C99" FontSize="22">
+                <Grid Background="#FF1068A2">
+                    <Rectangle HorizontalAlignment="Left" Height="332" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3"/>
+                    <Rectangle HorizontalAlignment="Left" Height="83" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3" Margin="0,337,0,0"/>
+                    <Rectangle HorizontalAlignment="Left" Height="112" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3" Margin="0,425,0,0"/>
+                    <DataGrid x:Name="dataGridSacn"  HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Height="297" Width="926" CurrentCellChanged="dataGrid_DataContextChanged" >
+                        <DataGrid.ContextMenu>
+                            <ContextMenu x:Name="dgmenu1" StaysOpen="true">
+                                <MenuItem Header="打开文件位置" Click="MenuItem_Click_2"/>
+                                <MenuItem Header="打开文件" Click="MenuItem_Click_3" />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                    <Label x:Name="label_Copy11" Content="扫描结果：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="10,0,787,494"/>
+                    <Button x:Name="button_Copy3" Content="导出结果" HorizontalAlignment="Left" Margin="210,0,0,55" VerticalAlignment="Bottom" Width="110" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" />
+                    <Button x:Name="button_Copy4" Content="开始扫描" HorizontalAlignment="Left" Margin="10,0,0,55" VerticalAlignment="Bottom" Width="110" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="button_Copy4_Click" />
+                    <Label x:Name="label_Copy12" Content="扫描文件：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="10,369,855,127"/>
+                    <Label x:Name="label_Copy13" Content="存在差异的文件：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="681,369,131,127"/>
+                    <Button x:Name="button_Copy5" Content="备份文件" HorizontalAlignment="Left" Margin="401,0,0,55" VerticalAlignment="Bottom" Width="110" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="button_Copy5_Click" />
+                    <Button x:Name="btn1_Copy" Content="?" HorizontalAlignment="Left" Margin="523,0,0,62" VerticalAlignment="Bottom" Width="33" Height="32" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16"  Click="btn1_Copy_Click" />
+                    <Label x:Name="label_Copy14" Content="新增文件：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="221,369,649,127"/>
+                    <Label x:Name="label_Copy15" Content="缺失文件：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="455,369,413,127"/>
+                    <TextBox x:Name="path_Copy" HorizontalAlignment="Left" Margin="554,657,0,-141" TextWrapping="Wrap" Text="文件MD5" VerticalAlignment="Top" Foreground="White" Width="331" Background="#FF007ACC" Height="31"/>
+                    <Label x:Name="scan_num" Content="0" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="103,369,742,127"/>
+                    <Label x:Name="scan_Add" Content="0" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="309,369,536,127"/>
+                    <Label x:Name="scan_Lost" Content="0" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="545,369,300,127"/>
+                    <Label x:Name="scan_Difrent" Content="0" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="827,369,18,127"/>
+                    <Button x:Name="button_Copy6" Content="锁定保护文件" HorizontalAlignment="Left" Margin="597,0,0,55" VerticalAlignment="Bottom" Width="143" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="button_Copy6_Click"  />
+                </Grid>
+            </TabItem>
+            <TabItem Name="tab_网络监控" Header="网络进程" Visibility="Collapsed" BorderBrush="#FF1068A2" Foreground="Black" Background="#FF005C99" FontSize="22">
+                <Grid Background="#FF1068A2">
+                    <Rectangle HorizontalAlignment="Left" Height="332" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3"/>
+                    <Rectangle HorizontalAlignment="Left" Height="83" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3" Margin="0,337,0,0"/>
+                    <Rectangle HorizontalAlignment="Left" Height="112" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3" Margin="0,425,0,0"/>
+                    <DataGrid x:Name="dataGridSacnNet"  ColumnWidth="*" AutoGenerateColumns="False" ItemsSource="{Binding NetConns}"  HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Height="297" Width="926" CurrentCellChanged="dataGrid_DataContextChanged" FontSize="12" GridLinesVisibility="None" >
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="16" Header="i">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="{Binding ico}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Binding="{Binding PID}" Width="auto" Header="PID"/>
+                            <DataGridTextColumn Binding="{Binding 应用程序名称}" Width="auto" Header="应用程序名称"/>
+                            <DataGridTextColumn Binding="{Binding 网络连接状态}" Width="auto" Header="网络连接状态"/>
+                            <DataGridTextColumn Binding="{Binding 协议}" Width="auto" Header="协议"/>
+                            <DataGridTextColumn Binding="{Binding CPU使用率}" Width="auto" Header="CPU使用率"/>
+                            <DataGridTextColumn Binding="{Binding 本地端口}" Width="auto" Header="本地端口"/>
+                            <DataGridTextColumn Binding="{Binding 本地IP地址}" Width="auto" Header="本地IP地址"/>
+                            <DataGridTextColumn Binding="{Binding 远程端口}" Width="auto" Header="远程端口"/>
+                            <DataGridTextColumn Binding="{Binding 远程IP地址}" Width="auto" Header="远程IP地址"/>
+                            <DataGridTextColumn Binding="{Binding 应用程序路径}" Width="auto" Header="应用程序路径"/>
+                        </DataGrid.Columns>
+
+                        <DataGrid.ContextMenu>
+                            <ContextMenu x:Name="dgmenu3" StaysOpen="true">
+                                <MenuItem Header="打开文件位置" Click="MenuItem_Click_4"/>
+                                <MenuItem Header="终止进程" Click="MenuItem_Click_5"  />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                    <Label x:Name="label_Copy19" Content="扫描结果：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="10,0,787,494"/>
+                    <Button x:Name="button_Copy8" Content="开始扫描" HorizontalAlignment="Left" Margin="370,0,0,34" VerticalAlignment="Bottom" Width="165" Height="61" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="button_Copy8_Click" PreviewMouseLeftButtonDown="button_Copy8_PreviewMouseLeftButtonDown" />
+                    <Button x:Name="btn1_Copy3" Content="?" HorizontalAlignment="Left" Margin="102,0,0,513" VerticalAlignment="Bottom" Width="32" Height="34" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16"  Click="btn1_Copy3_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="高级工具" Name="tab_高级工具"  Visibility="Collapsed"  BorderBrush="#FF1068A2" Foreground="Black" Background="#FF005C99" FontSize="22" Loaded="TabItem_Loaded">
+                <Grid Background="#FF1068A2">
+                    <Rectangle HorizontalAlignment="Left" Height="112" Stroke="#FF007ACC" VerticalAlignment="Top" Width="125" StrokeThickness="3" Margin="833,425,0,0"/>
+                    <Rectangle HorizontalAlignment="Left" Height="112" Stroke="#FF007ACC" VerticalAlignment="Top" Width="363" StrokeThickness="3" Margin="465,425,0,0"/>
+                    <Rectangle HorizontalAlignment="Left" Height="89" Stroke="#FF007ACC" VerticalAlignment="Top" Width="958" StrokeThickness="3"/>
+
+
+                    <Rectangle HorizontalAlignment="Left" Height="326" Stroke="#FF007ACC" VerticalAlignment="Top" Width="958" StrokeThickness="3" Margin="0,94,0,0"/>
+                    <Rectangle HorizontalAlignment="Left" Height="112" Stroke="#FF007ACC" VerticalAlignment="Top" Width="460" StrokeThickness="3" Margin="0,425,0,0"/>
+                    <TextBox x:Name="report" HorizontalAlignment="Left" Margin="10,132,0,0" TextWrapping="Wrap" Text="..."  ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Height="274" Width="938" Foreground="White" FontSize="16" Background="#FF1068A2" BorderBrush="#FF007ACC"/>
+                    <Button x:Name="button_Copy9" Content="蓝屏Dump查看器" HorizontalAlignment="Left" Margin="484,0,0,64" VerticalAlignment="Bottom" Width="314" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="button_Copy9_Click" />
+                    <Label x:Name="label_Copy22" Content="Report报告：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="10,94,787,403"/>
+                    <Button x:Name="button_Copy10" Content="WinBug pro蓝屏分析器 Win10" HorizontalAlignment="Left" Margin="484,0,0,14" VerticalAlignment="Bottom" Width="314" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="button_Copy10_Click" />
+                    <Label x:Name="lab_CPUWD" Content="CPU" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="850,454,51,46" RenderTransformOrigin="0.491,0.485"/>
+                    <Label x:Name="label_Copy25" Content="CPU" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="868,489,27,18"/>
+                    <Label x:Name="label_Copy26" Content="C°" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="907,454,10,46"/>
+                    <Button x:Name="btn1_Copy12" Content="X" HorizontalAlignment="Left" Margin="1030,0,-115,78" VerticalAlignment="Bottom" Width="43" Height="29" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16"  Click="btn1_Copy12_Click" />
+                    <Label x:Name="label_Copy24" Content="提示" Background="{x:Null}" Foreground="White" FontSize="16" FontWeight="Bold" Margin="1073,440,-167,78"/>
+                    <Button  Content=".exe木马专杀" HorizontalAlignment="Left" Margin="19,0,0,64" VerticalAlignment="Bottom" Width="210" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="Button_Click_1"  />
+                    <Button Content=".temp木马专杀" HorizontalAlignment="Left" Margin="19,0,0,17" VerticalAlignment="Bottom" Width="210" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="Button_Click_2"  />
+                    <Button  Content="server病毒专杀" HorizontalAlignment="Left" Margin="234,0,0,64" VerticalAlignment="Bottom" Width="210" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="Button_Click_3"  />
+                    <Button Content="Space" HorizontalAlignment="Left" Margin="234,0,0,17" VerticalAlignment="Bottom" Width="210" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="Button_Click_4"  />
+                    <Image x:Name="image1" HorizontalAlignment="Left" Height="79" Margin="124,10,0,0" VerticalAlignment="Top" Width="674" Source="IMG/bc2_副本.png"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="pad策略设置" Header="策略设置"  Visibility="Collapsed"  BorderBrush="#FF1068A2" Foreground="Black" Background="#FF005C99" FontSize="22">
+                <Grid Background="#FF1068A2">
+                    <Rectangle HorizontalAlignment="Left" Height="410" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3"/>
+                    <DataGrid x:Name="dataGrid"  HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Height="297" Width="926" CurrentCellChanged="dataGrid_DataContextChanged" >
+                        <DataGrid.ContextMenu>
+                            <ContextMenu x:Name="dgmenu2" StaysOpen="true">
+                                <MenuItem Header="保存" Click="MenuItem_Click"/>
+                                <MenuItem Header="删行" Click="MenuItem_Click_1" />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                    <Label x:Name="label_Copy4" Content="保护文件位置设置：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="10,0,787,497"/>
+                    <TextBox x:Name="path" HorizontalAlignment="Left" Margin="10,354,0,0" TextWrapping="Wrap" Text="C:\Windows\System32" VerticalAlignment="Top" Foreground="White" Width="676" Background="#FF007ACC" Height="31"/>
+                    <Button x:Name="button_Copy1" Content="选择路径" HorizontalAlignment="Left" Margin="697,0,0,156" VerticalAlignment="Bottom" Width="110" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="button_Copy1_Click"/>
+                    <Button x:Name="button_Copy2" Content="保护路径" HorizontalAlignment="Left" Margin="826,0,0,156" VerticalAlignment="Bottom" Width="110" Height="50" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20" Click="button_Copy2_Click" />
+                    <Rectangle HorizontalAlignment="Left" Height="132" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3" Margin="0,415,0,0"/>
+                    <Label x:Name="label_Copy5" Content="保护EXE文件" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="53,426,784,73"/>
+                    <Label x:Name="label_Copy6" Content="保护DLL文件" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="53,464,784,38"/>
+                    <Button x:Name="btn1_Copy1" Content="X" HorizontalAlignment="Left" Margin="10,0,0,89" VerticalAlignment="Bottom" Width="43" Height="29" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="btn1_Copy1_Click" />
+                    <Button x:Name="btn1_Copy2" Content="X" HorizontalAlignment="Left" Margin="10,0,0,50" VerticalAlignment="Bottom" Width="43" Height="29" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="btn1_Copy2_Click" />
+                    <Label x:Name="label_Copy7" Content="保护XML文件" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="266,426,561,73"/>
+                    <Button x:Name="btn1_Copy4" Content="X" HorizontalAlignment="Left" Margin="223,0,0,88" VerticalAlignment="Bottom" Width="43" Height="29" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="btn1_Copy4_Click" />
+                    <Label x:Name="label_Copy8" Content="保护config文件" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="266,461,551,38"/>
+                    <Button x:Name="btn1_Copy6" Content="X" HorizontalAlignment="Left" Margin="223,0,0,53" VerticalAlignment="Bottom" Width="43" Height="29" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="btn1_Copy6_Click" />
+                    <Label x:Name="label_Copy9" Content="被保护文件锁定为[只读]" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="507,426,241,73"/>
+                    <Button x:Name="btn1_Copy7" Content="?" HorizontalAlignment="Left" Margin="713,0,0,86" VerticalAlignment="Bottom" Width="32" Height="29" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="btn1_Copy7_Click" />
+                    <Button x:Name="btn1_Copy8" Content="X" HorizontalAlignment="Left" Margin="464,0,0,88" VerticalAlignment="Bottom" Width="43" Height="29" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="btn1_Copy8_Click" />
+                    <Label x:Name="label_Copy10" Content="开启驱动级实时文件IO检测" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="507,461,223,38"/>
+                    <Button x:Name="btn1_Copy9" Content="?" HorizontalAlignment="Left" Margin="744,0,0,53" VerticalAlignment="Bottom" Width="31" Height="27" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="btn1_Copy9_Click" />
+                    <Button x:Name="btn1_Copy10" Content="X" HorizontalAlignment="Left" Margin="464,0,0,54" VerticalAlignment="Bottom" Width="43" Height="29" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="16" Click="btn1_Copy10_Click" />
+
+                </Grid>
+            </TabItem>
+            <TabItem Name="tab_备份恢复" Header="备份恢复"  Visibility="Collapsed"  BorderBrush="#FF1068A2" Foreground="Black" Background="#FF005C99" FontSize="22">
+                <Grid Background="#FF1068A2">
+                    <Label x:Name="label_Copy16" Content="备份恢复报告：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="10,0,787,496"/>
+                    <Rectangle HorizontalAlignment="Left" Height="83" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3" Margin="0,337,0,0"/>
+                    <Rectangle HorizontalAlignment="Left" Height="112" Stroke="#FF007ACC" VerticalAlignment="Top" Width="948" StrokeThickness="3" Margin="0,425,0,0"/>
+                    <Button x:Name="button_Copy7" Content="开始恢复" HorizontalAlignment="Left" Margin="388,0,0,24" VerticalAlignment="Bottom" Width="167" Height="65" Background="#FF005C99" BorderBrush="#FF0977BF" Foreground="White" FontSize="20"  Click="button_Copy7_Click" />
+                    <Label x:Name="label_Copy17" Content="恢复成功：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="10,369,855,127"/>
+                    <Label x:Name="Back_num" Content="0" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="103,369,742,127"/>
+                    <TextBox x:Name="textBlock" HorizontalAlignment="Left" Margin="10,38,0,0" TextWrapping="Wrap" Text="..." ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Top" Height="294" Width="938" Foreground="White" FontSize="16" Background="#FF1068A2" BorderBrush="#FF007ACC"/>
+                    <Label x:Name="label_Copy18" Content="恢复失败：" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="320,369,545,127"/>
+                    <Label x:Name="Back_num_error" Content="0" Background="{x:Null}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="413,369,432,127"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <Canvas x:Name="cav_infor" HorizontalAlignment="Left" Height="82" Margin="-300,204,0,0" VerticalAlignment="Top" Width="254" Background="#FF3294D4" Opacity="0.99">
+            <Label x:Name="infor" Content="提示信息" Canvas.Left="10"  Canvas.Top="10" Width="234" Foreground="White" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="62"/>
+        </Canvas>
+        <Canvas x:Name="cav_Noty" HorizontalAlignment="Left" Height="82" Margin="504,635,0,-107" VerticalAlignment="Top" Width="254" Background="#FF1068A2" Opacity="0.85">
+            <Label x:Name="Noty" Content="提示信息" Canvas.Left="10"  Canvas.Top="10" Width="234" Foreground="White" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="62"/>
+        </Canvas>
+    </Grid>
+</Window>
